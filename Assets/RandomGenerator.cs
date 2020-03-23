@@ -7,8 +7,8 @@ public class RandomGenerator : MonoBehaviour
     public GameObject Dove;
     public GameObject Hawk;
     public GameObject Food;
-    private Vector3 Min;
-    private Vector3 Max;
+    private int Min;
+    private int Max;
     private float _xAxis;
     private float _yAxis;
     private float _zAxis;
@@ -23,16 +23,16 @@ public class RandomGenerator : MonoBehaviour
 
     private void SetRange() 
     {
-        Min = new Vector3(2, 4, 0);
-        Max = new Vector3(20, 40, 0);
+        Min = -30;
+        Max = 30;
     }
 
     private void GenerateRandom()
     {
-        _xAxis = UnityEngine.Random.Range(Min.x, Max.x);
-        _yAxis = UnityEngine.Random.Range(Min.y, Max.y);
-        _zAxis = UnityEngine.Random.Range(Min.z, Max.z);
-        _randomPosition = new Vector3(_xAxis, _yAxis, _zAxis);
+        _xAxis = UnityEngine.Random.Range(Min, Max);
+        _yAxis = UnityEngine.Random.Range(Min, Max);
+        //_zAxis = UnityEngine.Random.Range(Min.z, Max.z);
+        _randomPosition = new Vector3(_xAxis, _yAxis, 0);
     }
     // Update is called once per frame
     void Update()
